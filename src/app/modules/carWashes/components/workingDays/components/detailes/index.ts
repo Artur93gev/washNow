@@ -77,8 +77,8 @@ export class CarWashWorkingDaysDetailes implements OnInit {
     event && event.stopPropagation();
 
     const callBack = this.isEdit ?
-      this.workingDays.updateItem(this.carWashesService.activeCarWash._id, this.workingDay._id, [ this.formGroup.value ]) :
-      this.workingDays.create(this.carWashesService.activeCarWash._id, [ this.formGroup.value ]);
+      this.workingDays.updateItem(this.carWashesService.activeCarWash._id, this.workingDay._id, this.formGroup.value) :
+      this.workingDays.create(this.carWashesService.activeCarWash._id, this.formGroup.value);
 
     callBack.subscribe((res: any) => {
       if (res && res.value) {
