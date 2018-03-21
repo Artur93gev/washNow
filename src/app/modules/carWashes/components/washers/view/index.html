@@ -1,0 +1,56 @@
+<div class="page-heading-small">
+  <h2 class="mat-h2 text-capitalize">
+    <a class="back-to-car-washes" (click)="goBackToCarWashCards($event)">
+      <mat-icon class="arrow-back " color="primary">
+        arrow_back
+      </mat-icon>
+    </a>
+    CarWashes
+  </h2>
+</div>
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addWasher($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedWasher?._id}}"
+    (click)="editWasher($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedWasher?._id}}"
+    (click)="deleteWasher($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let washer of washers"
+    (click)="selectWasher(washer, $event)"
+    class="grid-item custom-mat-card {{washer._id === selectedWasher?._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <!-- <img class="cardIcon" src="../../../assets/img/{{washer.slug}}.svg" alt="{{washer.name}}"> -->
+      <p class="mat-h4">
+        {{washer.first_name}} {{washer.last_name}}
+      </p>
+      <mat-card-content>
+        <p class="description">
+          {{washer.username}}
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

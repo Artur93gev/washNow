@@ -1,0 +1,148 @@
+.inner-page-body {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.inner-page-header {
+	padding: 1rem;
+	// background: url(../assets/img/inner-bg-bme.svg) no-repeat;
+	background-size: 100%;
+
+	.mat-display-1 {
+		margin: 0;
+	}
+}
+
+.inner-page-aside {
+	flex-basis: 15%;
+	padding: 2rem;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.mat-tab-group {
+	flex-basis: 85%;
+}
+
+.mat-tab-body-content {
+	padding: 1rem;
+}
+
+.mat-h2 {
+	text-transform: uppercase;
+}
+
+.back-to-services {
+	vertical-align: middle;
+}
+
+.service-inner-page {
+	.mat-accent {
+		margin-right: 1rem;
+	}
+	.mat-form-field {
+		display: inherit;
+	}
+}
+
+.sidenav-opened {
+	position: fixed !important;
+	top: 111px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.product-image-with-title {
+	display: flex;
+	align-items: center;
+	img {
+		margin-right: 1rem;
+	  height: 60px;
+	}
+}
+
+.order-count {
+	margin-left: 0.5em;
+}
+
+.order-grid {
+	grid-template-columns: repeat(4, 24%);
+	grid-gap: 1rem;
+}
+
+.order-description {
+	max-height: 3em;
+	overflow: hidden;
+	font-size: 12px;
+}
+
+.order-details {
+	text-align: right;
+}
+
+.order-details-button {
+	text-transform: uppercase;
+}
+
+.service-inner-page {
+	.mat-drawer {
+		background-color: #fff;
+	}
+
+	.mat-sidenav {
+		&.small {
+			width: 600px;
+		}
+
+		&.medium {
+			width: 800px;
+		}
+		&.large {
+			width: 1000px;
+		}
+
+		padding: 3rem 2rem;
+
+		.mat-form-field {
+			width: 100%;
+		}
+	}
+}
+
+.order-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.8rem;
+}
+
+.mat-card.order-card {
+	padding: 1rem;
+}
+
+.order-badge {
+	font-size: 12px;
+	width: 75px;
+	line-height: 17px;
+	height: 18px;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	border-radius: 2px;
+	text-transform: capitalize;
+}
+
+.order-badge-ordered {
+	background-color: #ffc107;
+}
+.order-badge-done {
+	background-color: #03a9f4;
+}
+.order-badge-canceled {
+	background-color: #f44336;
+}
+.container-fluid {
+	//height: calc(100vh - 111px);
+	//overflow-y: auto;
+}

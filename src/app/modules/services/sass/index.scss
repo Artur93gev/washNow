@@ -1,0 +1,38 @@
+
+.services {
+  min-height: 50vh;
+}
+
+.description {
+  font-size: 12px;
+  color: #757575;
+}
+
+.grid-item {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mat-h4 {
+  font-weight: 500;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.button-container {
+  
+  padding: 20px;
+  padding-left: 0px;
+  
+  .button-margin {
+
+    margin-left: 10px;
+  }
+}
+

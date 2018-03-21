@@ -1,0 +1,24 @@
+:host {
+  flex-basis: 40%;
+}
+
+.material-search {
+  background-color: #fff;
+  border-radius: 2px;
+  margin-left: 142px;
+  input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding-left: 3rem;
+    background: url("../../../../../assets/images/search-icon.svg") no-repeat 10px center;
+    background-size: 30px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ::placeholder {
+    color: #9e9e9e;
+  }
+}

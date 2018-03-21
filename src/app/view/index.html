@@ -1,0 +1,9 @@
+<div class="content-wrapper">
+  <wiseboard *ngIf="visible" class="float-left"></wiseboard>
+  <div class="content float-left {{!visible ? 'login-page-ang' : ''}}">
+    <loader *ngIf="display"></loader>
+    <div class="relative container-fluid" style="min-height: 100%;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

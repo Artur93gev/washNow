@@ -1,0 +1,51 @@
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addService($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedService?._id}}"
+    (click)="editService($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedService?._id}}"
+    (click)="deleteService($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let service of services"
+    (click)="selectService(service, $event)"
+    class="grid-item custom-mat-card {{service._id === selectedService?._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <p class="mat-h4">
+        Name: {{service.name}}
+      </p>
+      <mat-card-content>
+        <p class="description">
+          Category {{service.category}}
+        </p>
+        <p>
+          Description
+        </p>
+        <span>
+          {{service.description}}
+        </span>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

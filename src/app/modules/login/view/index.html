@@ -1,0 +1,38 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <p class="title-with-icon mat-h3">
+      </p>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="grid">
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Login"
+            class="input form-control rounded"
+            [(ngModel)]="user.username"
+            [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Password"
+            class="input form-control rounded"
+            [(ngModel)]="user.password"
+            [ngModelOptions]="{standalone: true}"
+          >
+        </mat-form-field>
+        <span class="mat-caption" (click)="forgotPassword($event)">
+          Forgot password or login
+        </span>
+        <div class="create-confirm">
+          <button color="accent" mat-raised-button (click)="login($event)">
+            Log in
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,101 @@
+<div class="inner-page-header">
+  <div class="page-heading-small">
+    <h2 class="mat-h2 text-capitalize">
+      <a class="back-to-car-washes" (click)="goBackToCarsWashes($event)">
+        <mat-icon class="arrow-back " color="primary">
+          arrow_back
+        </mat-icon>
+      </a>
+      {{isEdit ? 'Setup' : 'Create'}}
+    </h2>
+  </div>
+  <mat-card class="car-washes-width">
+    <mat-card-header>
+      <p class="title-with-icon mat-h3">
+        Cars details
+      </p>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="grid" [formGroup]="formGroup" novalidate>
+        <mat-form-field>
+          <input
+            matInput
+            name="Username"
+            placeholder="Username"
+            formControlName="username"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            name="Password"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            name="First name"
+            placeholder="First name"
+            formControlName="first_name"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            name="Last name"
+            placeholder="Last name"
+            formControlName="last_name"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            name="Phone number"
+            placeholder="Phone number"
+            formControlName="phoneNumber"
+          >
+          <button
+            matSuffix
+            mat-button
+            mat-icon-button
+            aria-label="add"
+            (click)="addPhoneNumberToPhones($event)"
+            [disabled]="formGroup.get('phoneNumber').invalid"
+          >
+            <mat-icon>
+              done
+            </mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field *ngFor="let phone of phones">
+          <input
+            matInput
+            name="Phone number"
+            type="number"
+            placeholder="Phone number"
+            value="{{phone}}"
+          >
+          <button
+            matSuffix
+            mat-button
+            mat-icon-button
+            aria-label="clear"
+            (click)="clearPhoneNumberFromPhones(phone, $event)"
+          >
+            <mat-icon>
+              clear
+            </mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="create-confirm">
+          <button color="accent" [disabled]="formGroup.invalid" mat-raised-button (click)="submit($event)">
+            {{isEdit ? 'Setup' : 'Create'}}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

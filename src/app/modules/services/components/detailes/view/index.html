@@ -1,0 +1,62 @@
+<div class="inner-page-header">
+  <div class="page-heading-small">
+    <h2 class="mat-h2 text-capitalize">
+      <a class="back-to-car-washes" (click)="goBackToServicesCards($event)">
+        <mat-icon class="arrow-back " color="primary">
+          arrow_back
+        </mat-icon>
+      </a>
+      {{isEdit ? 'Setup' : 'Create'}}
+    </h2>
+  </div>
+  <mat-card class="car-washes-width">
+    <mat-card-header>
+      <p class="title-with-icon mat-h3">
+        Services details
+      </p>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="grid" [formGroup]="formGroup" novalidate>
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Name"
+            formControlName="name"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            name="Description"
+            placeholder="Description"
+            formControlName="description"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            name="Duration"
+            placeholder="Duration"
+            formControlName="avg_duration"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="category" placeholder="Select a category">
+            <mat-option [value]="'exterior'">
+              Exterior
+            </mat-option>
+            <mat-option [value]="'interior'">
+              Interior
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="create-confirm">
+          <button color="accent" [disabled]="formGroup.invalid" mat-raised-button (click)="submit($event)">
+            {{isEdit ? 'Setup' : 'Create'}}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

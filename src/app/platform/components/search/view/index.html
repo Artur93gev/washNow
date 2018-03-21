@@ -1,0 +1,12 @@
+<!--<div class="form-group">
+<input placeholder="{{placeHolder | translate}}" #input id="search" class="input form-control rounded search-input-comp"
+       (keyup)="changes(input.value)" >
+</div>-->
+
+<mat-form-field class="fullWidth" *ngIf="style !== 'box'">
+    <input matInput placeholder="{{placeHolder}}" id="search"  #input  type="text" (keyup)="changes(input.value)">
+ </mat-form-field>
+
+<form class="material-search mat-elevation-z2" *ngIf="style === 'box'">
+    <input #input (keyup)="changes(input.value)" type="text" placeholder="{{placeHolder}}">
+</form>

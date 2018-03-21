@@ -1,0 +1,56 @@
+<div class="page-heading-small">
+  <h2 class="mat-h2 text-capitalize">
+    <a class="back-to-car-washes" (click)="goBackToCarWashCards($event)">
+      <mat-icon class="arrow-back " color="primary">
+        arrow_back
+      </mat-icon>
+    </a>
+    CarWashes
+  </h2>
+</div>
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addWorkingDay($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedWorkingDay?._id}}"
+    (click)="editWorkingDay($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedWorkingDay?._id}}"
+    (click)="deleteWorkingDay($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let workingDay of workingDays"
+    (click)="selectWorkingDay(workingDay, $event)"
+    class="grid-item custom-mat-card {{workingDay._id === selectedWorkingDay?._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <img class="cardIcon" src="{{workingDay.image}}" alt="{{workingDay.image}}">
+      <p class="mat-h4">
+        Day: {{workingDay.day}}
+      </p>
+      <mat-card-content>
+        <p class="description">
+          Working hours {{workingDay.from}}-{{workingDay.to}}
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,383 @@
+
+
+
+//main colors
+$main-color: #3f51b5;
+$second-color: #a71f67;
+$textBlue: #505767;
+$darkBlue: #7b8191;
+$extraDarkBlue: #121623;
+$bodyBg: #f3f3f5;
+$noteBg: #12adad;
+
+$deactiveGrey: #a8abb3;
+$disabled: #ededf0;
+
+$filterBorder: #e6e9f2;
+//GREY COLORS
+$lightGrey: #c2c5cd;
+$extraLightGrey: #c7d3e2;
+$subTreeBorderGrey: #d6d6df;
+$tableHover: #d6d6df;
+$darkBorderGrey: #ccccd6;
+$greyLight2: #a5aabc;
+$bodyCover: #e0e1e8;
+$tabHover: #b4b9cb;
+
+//GREEN COLORS
+$mainGreen: #27a676;
+$darkGreen: #1A7051;
+$lightGreenHover: #2dc38d;
+$greenLight : #4ec27f;
+$greenLightHover : #3aae6b;
+
+//other flat colors
+$flateYellow: #fec354;
+$flatOrangeDark: #e39400;
+$flatRed: #ff7b84;
+$flatRed2: #ff646e;
+$flatRed3: #cf4a65;
+$flatRed4: #d6657c;
+$flatDarkRed: #d6677e;
+$flatDarkRed2: #a82d46;
+$flatGreen: #31d498;
+$flatBlue: #31d2d4;
+$flatBlue2: #31b3d4;
+$flatBlue3: #2561a5;
+$flatOrange: #f0ba47;
+$flatDeadOrange: #d3b173;
+$flatGreenLime: #b2de65;
+
+$lightRed: #fff2f2;
+$pinkRed: #de4e9a;
+$goldYellow: #efbf00;
+$darkGold: #caa35a;
+
+$red: #e91d25;
+$pink: #ec008c;
+$yellow: #f7bc3a;
+$green: #3cba84;
+$saladGreen: #b2d234;
+
+$mRoll: #2695a6;
+
+$accepted: $flatGreen;
+$pending: $flatOrange;
+$denied: $flatRed;
+
+$deepBlue: #21283a;
+$leftSidebar: #212532;
+$sideBarBorder: #282c38;
+$selectedSideNav: $second-color;
+$selectedSideNavOpened: #2e323e;
+$sideBarHover: #282c39;
+$blocked: $sideBarHover;
+$sideBarOpenedHover: #1e222f;
+$sidebarSubMenu: #121623;
+$deepDarkBlue: #3f4553;
+$darkWhite: #f7f7f9;
+
+$boxTitle: #acaeb5;
+$boxIcon: #e0e0e2;
+
+$tableRowGrey: #f9f9fa;
+$tableRowGreyDark: #f3f3f3;
+
+$borderLightGrey: #e0e0e1;
+
+$tooltipBorder: #c6c8d0;
+
+$lightHover: #fbfbfc;
+
+//colors chart
+$purple: #7662aa;
+$mint: #01ab90;
+$yellowChart: #f1c946;
+$coral: #f46e79;
+$mulberry: #d34e9f;
+$pacificBlue: #0299d0;
+$softBlue: #6bceed;
+$softRed: #ed4e00;
+$softOrange: #f89e60;
+$softYellow: #ece5b7;
+
+//color chart classes
+.darkBlue {
+  color: $darkBlue !important;
+}
+
+.yellow {
+  color: $yellow !important;
+}
+
+.boxTitle {
+  color: $boxTitle !important;
+}
+
+.mainGreen {
+  color: $mainGreen;
+}
+
+.purple {
+  color: $purple;
+}
+
+.mint {
+  color: $mint;
+}
+
+.yellowChart {
+  color: $yellowChart !important;
+}
+
+.coral {
+  color: $coral;
+}
+
+.mulberry {
+  color: $mulberry !important;
+}
+
+.pacificBlue {
+  color: $pacificBlue;
+}
+
+.softBlue {
+  color: $softBlue;
+}
+
+.softOrange {
+  color: $softOrange;
+}
+
+.softYellow {
+  color: $softYellow;
+}
+
+//bg-colors chart
+.purpleBg {
+  background-color: $purple;
+}
+
+.greenBg {
+  background-color: $green;
+}
+
+.mintBg {
+  background-color: $mint;
+}
+
+.yellowChartBg {
+  background-color: $yellowChart;
+}
+
+.coralBg {
+  background-color: $coral;
+}
+
+.mulberryBg {
+  background-color: $mulberry;
+}
+
+.pacificBlueBg {
+  background-color: $pacificBlue;
+}
+
+.softBlueBg {
+  background-color: $softBlue;
+}
+
+.softRedBg {
+  background-color: $softRed;
+}
+
+.softOrangeBg {
+  background-color: $softOrange;
+}
+
+.softYellowBg {
+  background-color: $softYellow;
+}
+
+//colors classes
+.flatGreenCol {
+  color: $flatGreen !important;
+}
+
+.flatOrangeCol {
+  color: $flatOrange !important;
+}
+
+.flatRedCol {
+  color: $flatRed;
+}
+
+.flatBlueCol {
+  color: $flatBlue;
+}
+
+.flatBlue2Col {
+  color: $flatBlue2 !important;
+}
+
+.flatGreenLime {
+  color: $flatGreenLime !important;
+}
+
+.flatDarkRed2 {
+  color: $flatDarkRed2 !important;
+}
+
+.flatOrangeDark {
+  color: $flatOrangeDark !important;
+}
+
+.lightGreyCol {
+  color: $lightGrey;
+}
+
+.greyLight2Col {
+  color: $greyLight2;
+}
+
+.pink {
+  color: $pink;
+}
+
+.whiteBgCol {
+  background-color: #fff !important;
+}
+
+.flatRedBgCol {
+  background-color: $flatRed;
+}
+
+.flatGreenLimeBgCol {
+  background-color: $flatGreenLime;
+}
+
+.flatGreenBgCol {
+  background-color: $flatGreen;
+}
+
+.flatDeadOrangeBgCol {
+  background-color: $flatDeadOrange;
+}
+
+.flatBlueBgCol {
+  background-color: $flatBlue;
+}
+
+.whiteBg {
+  background-color: #fff !important;
+}
+
+.darkBlueBgCol {
+  background-color: $darkBlue;
+}
+
+.availableCredit {
+  color: $lightGreenHover;
+}
+
+.creditLine {
+  color: $flatOrangeDark;
+}
+
+.balance {
+  color: $flatBlue2;
+}
+
+.totalAvailable {
+  color: $flatGreenLime;
+}
+
+.profit {
+  color: $noteBg;
+}
+
+.bonusBalance {
+  color: $yellowChart;
+}
+
+.commission {
+  color: #656565;
+}
+
+.font14 {
+  font-size: 14px !important;
+}
+
+.font16 {
+  font-size: 16px !important;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font10 {
+  font-size: 10px;
+}
+
+
+.btn-success {
+  background-color: #4ca686;
+  border: none;
+
+  &:hover {
+    background-color: #4ca686 - 10;
+  }
+}
+
+.btn-primary {
+  background-color: #236093;
+  border: none;
+
+  &:hover {
+    background-color: #236093 - 10;
+  }
+}
+
+.mainGreenWHover {
+  background-color: #4ca686;
+  color: #fff;
+  &:hover {
+    transition: 0.3s;
+    color: #fff;
+    background-color: #4ca686 - 10;
+  }
+}
+
+//font sizes
+$font9: 9px;
+$font10: 10px;
+$font11: 11px;
+$font12: 12px;
+$font13: 13px;
+$font14: 14px;
+$font16: 16px;
+$font19: 19px;
+$font24: 24px;
+$font32: 32px;
+$fontXL: 48px;
+$fontLight: 'Roboto Light';
+$fontRegular: 'Roboto Regular';
+$fontBold: 'Roboto Bold';
+$fontItalic: 'Roboto Italic';
+
+//ui size
+$headerHeight: 56px;
+$boxShadow: 2px;
+$breadcrumbHeight: 35px;
+
+//box
+$boxShadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+$boxPadding: 5px 10px;
+$boxHeader: 54px;
+
+.fontItalic {
+  font-family: $fontItalic;
+}
+
+

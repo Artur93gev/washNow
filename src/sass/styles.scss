@@ -1,0 +1,251 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~normalize.css/normalize.css";
+@import "./variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+
+.light-grey {
+  background: #fdfdfd;
+}
+
+.arrow-back {
+  margin-right: 1rem;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+
+  @media (min-width: 576px) {
+    & {
+      width: 540px;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    & {
+      width: 720px;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & {
+      width: 960px;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & {
+      width: 1140px;
+      max-width: 100%;
+    }
+  }
+  @media (min-width: 1440px) {
+    & {
+      width: 1360px;
+      max-width: 100%;
+    }
+  }
+
+  /*   .mat-drawer-container {
+    height: 100%;
+  } */
+}
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.mat-elevation-z2 {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-elevation-z4 {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-elevation-z5 {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.mat-elevation-z6 {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.grid {
+  display: grid;
+
+  .custom-mat-card {
+    height: 195px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      @extend .mat-elevation-z5;
+    }
+
+    @extend .mat-elevation-z2;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.inputHint {
+  width: 100%;
+  height: auto;
+  background: #f5f6fb;
+  //margin: 10px 0;
+  padding: 8px 8px 4px;
+  border-radius: 4px;
+  //max-width: 360px;
+
+  .hintIcon {
+    margin-right: 6px;
+    float: left;
+    color: #bdbdbd;
+    display: table-cell;
+
+    &.hint-warn {
+      color: #efe010;
+    }
+
+    .mat-icon {
+      font-size: 16px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .hintText {
+    font-size: 12px;
+    color: #656565;
+    display: table-cell;
+    line-height: 22px;
+    text-transform: none;
+  }
+}
+
+.mat-form-field-prefix,
+.mat-form-field-suffix {
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.mat-card {
+  .card-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1px #e0e0e0;
+    left: 0;
+    padding: 0;
+
+    .mat-card-actions {
+      margin: 0;
+      padding: 0;
+
+      .mat-button {
+        width: 100%;
+        padding: 5px 0 5px 20px;
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.margin-buttom {
+  margin-buttom: 20px;
+}
+
+.padding-left {
+  padding-left: 20px;
+}
+
+.padding-top {
+  padding-top: 20px;
+}
+
+.padding-right {
+  padding-right: 20px;
+}
+
+.padding-buttom {
+  padding-buttom: 20px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.notificationIcon {
+  color: #ffc107;
+
+  &.info {
+    color: #ffc107;
+  }
+
+  &.danger {
+    color: red;
+  }
+
+  &.message {
+    color: #3f51b5;
+  }
+
+  &.success {
+    color: #4caf50;
+  }
+}

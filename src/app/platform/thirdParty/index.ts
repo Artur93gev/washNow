@@ -1,0 +1,1 @@
+export { GMaps } from './gmaps';

@@ -1,0 +1,89 @@
+<div class="inner-page-header">
+  <div class="page-heading-small">
+    <h2 class="mat-h2 text-capitalize">
+      <a class="back-to-car-washes" (click)="goBackToCarWashCards($event)">
+        <mat-icon class="arrow-back " color="primary">
+          arrow_back
+        </mat-icon>
+      </a>
+      {{isEdit ? 'Setup' : 'Create'}}
+    </h2>
+  </div>
+  <mat-card class="car-washes-width">
+    <mat-card-header>
+      <p class="title-with-icon mat-h3">
+        Car washes details
+      </p>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="grid" [formGroup]="formGroup" novalidate>
+        <mat-form-field>
+          <mat-select placeholder="Select a manager" formControlName="owner">
+            <mat-option *ngFor="let manager of managers" [value]="manager._id">
+              {{ manager.username }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="getPhones().length">
+          <input
+            matInput
+            placeholder="Phone"
+            formControlName="phones"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="number"
+            name="Capacity"
+            placeholder="Capacity"
+            formControlName="capacity"
+          >
+        </mat-form-field>
+        <mat-form-field formGroupName="address">
+          <input
+            matInput
+            name="City"
+            placeholder="City"
+            formControlName="city"
+          >
+        </mat-form-field>
+        <mat-form-field formGroupName="address">
+          <input
+            matInput
+            name="Street"
+            placeholder="Street"
+            formControlName="street"
+          >
+        </mat-form-field>
+        <button
+          matSuffix
+          mat-button
+          (click)="getLocationInformation($event)"
+        >
+          Recognize location
+        </button>
+        <mat-form-field formGroupName="location">
+          <input
+            matInput
+            name="Location"
+            placeholder="Location"
+            formControlName="coordinates"
+          >
+        </mat-form-field>
+        <div class="create-confirm">
+          <button color="accent" [disabled]="formGroup.invalid" mat-raised-button (click)="submit($event)">
+            {{isEdit ? 'Setup' : 'Create'}}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <google-maps
+    class="maps-container"
+    [zoom]="16"
+    [type]="'satellite'"
+    (onClick)="gmapsClick($event)"
+    (mapObject)="getMapObject($event)"
+  ></google-maps>
+</div>

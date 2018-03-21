@@ -1,0 +1,43 @@
+<div data-provides="fileinput" class="relative flex">
+    <div class=" " style="text-transform: capitalize">
+        {{title}}
+    </div>
+    <button
+        type="button"
+        color="primary"
+        class="smallButton"
+        mat-raised-button
+        [disabled]='disabled'
+        (click)="multiple ? uploaderMulti.click() : uploader.click()">
+        <div class="displayInlineBlock  btn-file">
+            <div>
+                file
+            </div>
+        </div>
+    </button>
+    <input
+        [hidden]="multiple"
+        style="display: none !important;"
+        name=""
+        type="file"
+        class="site-logo"
+        multiple
+        #uploaderMulti
+        [disabled]="disabled"
+        (change)="change($event)"
+    >
+    <input
+        [hidden]="!multiple"
+        style="display: none !important;"
+        name=""
+        type="file"
+        class="site-logo"
+        #uploader
+        [disabled]="disabled"
+        (change)="change($event)"
+    >
+    <span class="fileinput-new text-capitalize">
+      {{names || 'No files attached'}}
+    </span>
+
+</div>

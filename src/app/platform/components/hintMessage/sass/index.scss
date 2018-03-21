@@ -1,0 +1,36 @@
+.inputHint {
+
+  width: 100%;
+  height: auto;
+  background: #f5f6fb;
+  //margin: 10px 0;
+  padding: 8px 8px 4px;
+  border-radius: 4px;
+  //max-width: 360px;
+
+  .hintIcon {
+    margin-right: 6px;
+    float: left;
+    color: #bdbdbd;
+    display: table-cell;
+
+    &.hint-warning {
+      color: #efe010;
+    }
+
+    .mat-icon {
+      font-size: 16px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .hintText {
+    font-size: 12px;
+    color: #656565;
+    display: table-cell;
+    line-height: 22px;
+    text-transform: none;
+  }
+
+}

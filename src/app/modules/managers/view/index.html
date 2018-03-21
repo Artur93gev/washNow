@@ -1,0 +1,46 @@
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addManager($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedManager?._id}}"
+    (click)="editManager($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedManager?._id}}"
+    (click)="deleteManager($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let manager of managers"
+    (click)="selectManager(manager, $event)"
+    class="grid-item custom-mat-card {{manager._id === selectedManager._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <img class="cardIcon" src="../../../assets/img/{{manager.slug}}.svg" alt="{{manager.name}}">
+      <p class="mat-h4">
+        {{manager.first_name}} {{manager.last_name}}
+      </p>
+      <mat-card-content>
+        <p class="description">
+          {{manager.username}}
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,45 @@
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addCar($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedCar?._id}}"
+    (click)="editCar($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedCar?._id}}"
+    (click)="deleteCar($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let car of cars"
+    (click)="selectCar(car, $event)"
+    class="grid-item custom-mat-card {{car._id === selectedCar?._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <img class="cardIcon" src="{{car.image}}" alt="{{car.image}}">
+      <p class="mat-h4">
+      </p>
+      <mat-card-content>
+        <p class="description">
+          Mark {{car.make}}
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

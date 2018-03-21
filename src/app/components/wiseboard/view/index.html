@@ -1,0 +1,30 @@
+<!-- <div class="mat-elevation-z4">
+  <mat-sidenav-container>
+    <mat-sidenav mode="side">
+      Start
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <a
+        *ngFor="let item of menuList"
+        (click)="selectTab(item.url, $event)"
+        class="mat-button"
+        mat-button
+      >
+        <div *ngIf="settings.tab === item.url" class="selectedSectionSideNav"></div>
+        {{item.name}}
+      </a>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
+<div class="mat-elevation-z4" style="display: inline-block;">
+  <mat-toolbar color="primary" style="height: 100vh; width: 250px;">
+    <img src="../../../../assets/images/washer-logo.png" class="wash-now-logo" />
+    <mat-toolbar-row *ngFor="let item of menuList" (click)="selectTab(item.url, $event)">
+      <div *ngIf="settings.tab === item.url" class="selectedSectionSideNav"></div>
+      <span>
+        {{item.name}}
+      </span>
+      <mat-icon *ngIf="settings.tab === item.url" class="margin-left">forward</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

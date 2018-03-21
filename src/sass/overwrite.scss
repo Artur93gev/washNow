@@ -1,0 +1,157 @@
+@import "./variables";
+@import "../../node_modules/loaders.css/loaders.css";
+
+
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: Roboto-LightItalic;
+  src: url('../fonts/Roboto-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: Roboto-MediumItalic;
+  src: url('../fonts/Roboto-MediumItalic.ttf');
+}
+@font-face {
+  font-family: Roboto-Medium;
+  src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: Roboto-ThinItalic;
+  src: url('../fonts/Roboto-ThinItalic.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: Roboto-BoldItalic;
+  src: url('../fonts/Roboto-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
+.robotoMedium {
+  font-family: Roboto-Medium;
+}
+
+body {
+  font-family: Roboto;
+ }
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-top .navbar-header .navbar-brand img {
+  width: inherit;
+  height: inherit;
+}
+
+.noMinWidth {
+  min-width: 0 !important;
+}
+
+.noMaxWidth {
+  max-width: 0 !important;
+}
+
+.noMinHeight {
+  min-height: 0 !important;
+}
+
+.noMaxHeight {
+  max-height: 0 !important;
+}
+.fullWidth {
+  width: 100%;
+}
+.noPadding {
+  padding: 0 !important;
+}
+
+.noPaddingLeft {
+  padding-left: 0;
+}
+.noPaddingRight {
+  padding-right: 0 !important;
+}
+.noMargin {
+  margin: 0 !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.displayInlineBlock {
+  display: inline-block;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayNone {
+  display: none;
+}
+
+.floatRight {
+  float: right !important;
+}
+
+.floatLeft {
+  float: left !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+.defaultCursor {
+  cursor: default !important;
+}
+.overflowHidden {
+  overflow: hidden;
+}
+.borderBottom {
+  border-bottom:  1px solid #e4e6e6;
+}
+.marginCenter {
+  margin: 0 auto;
+}
+.alignCenter {
+  text-align: center;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}
+.marginBottom5 {
+  margin-bottom: 5px !important;
+}
+
+
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase !important;
+}

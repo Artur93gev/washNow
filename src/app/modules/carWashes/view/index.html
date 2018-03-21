@@ -1,0 +1,78 @@
+<div class="button-container">
+  <button
+    color="primary"
+    mat-raised-button
+    (click)="addCarWash($event)"
+  >
+    Add
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedCarWash?._id}}"
+    (click)="editCarWash($event)"
+  >
+    Edit
+  </button>
+  <button
+    color="primary"
+    class="button-margin"
+    mat-raised-button
+    disabled="{{!selectedCarWash?._id}}"
+    (click)="deleteCarWash($event)"
+  >
+    Delete
+  </button>
+</div>
+<div class="grid">
+  <mat-card
+    *ngFor="let carWash of carWashes"
+    (click)="selectCarWash(carWash, $event)"
+    class="grid-item custom-mat-card {{carWash._id === selectedCarWash?._id ? 'softYellowBg' : ''}}"
+  >
+    <div class="cardContentWrapper">
+      <img class="cardIcon" src="../../../assets/img/{{carWash.slug}}.svg" alt="{{carWash.name}}">
+      <span class="mat-h4">
+        Owner: {{getOwnerName(carWash.owner)}}
+      </span>
+      <div class="action-buttons-container">
+        <button
+          color="primary"
+          mat-raised-button
+          (click)="setWorkingDays(carWash, $event)"
+          >
+          Set working days
+        </button>
+        <button
+          class="button-margin" 
+          color="primary"
+          mat-raised-button
+          (click)="seeServices(carWash, $event)"
+          >
+          See services
+        </button>
+        <button
+          class="button-margin"
+          color="primary"
+          mat-raised-button
+          (click)="seeWashers(carWash, $event)"
+          >
+          See washers
+        </button>
+      </div>
+      <mat-card-content>
+        <p class="description">
+          Capacity {{carWash.capacity}}
+        </p>
+        <p>
+          Address
+        </p>
+        <pre>
+          City:  {{carWash.address.city}}
+          Street:  {{ carWash.address.street}}
+        </pre>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>
