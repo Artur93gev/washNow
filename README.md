@@ -43,7 +43,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
   # NOTE
 
-    By default build (if you use just `build`) tool will use staging argument.
+    By default build (if you use just type `build`) tool will use staging argument.
 
 ## Running unit tests
 
