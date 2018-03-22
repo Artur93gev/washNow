@@ -43,5 +43,5 @@ Thumbs.db
 
 # bash tools will be excluded from gitignore whenever it will be needed
 
-.generator.sh
-build.sh
+#.generator.sh
+#build.sh
