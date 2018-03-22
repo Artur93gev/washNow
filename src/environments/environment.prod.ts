@@ -1,7 +1,7 @@
 import env from './type';
 
 export const environment: env = {
-    hostUrl: 'http://api.washnow.com/',
+    hostUrl: 'https://api.washnow.am/',
     production: true,
     name: 'production',
 }
