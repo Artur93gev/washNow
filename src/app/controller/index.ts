@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { Dispatcher } from '@platform/services';
+import { Dispatcher, Settings } from '@platform/services';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,7 @@ export class AppComponent {
 
   constructor(
     private dispatcher: Dispatcher,
+    private settings: Settings,
     private router: Router,
    ) {
     this.router.events.subscribe((e: any) => {
@@ -37,6 +38,14 @@ export class AppComponent {
       .filter(event => event === 'login')
       .subscribe(_ => {
         this.visible = true;
+      });
+
+    this.dispatcher.events
+      .filter(event => event === 'logout')
+      .subscribe(_ => {
+        this.settings.token = null;
+        this.settings.user = null;
+        this.router.navigate(['login']);
       });
   }
 }

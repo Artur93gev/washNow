@@ -66,10 +66,13 @@ export class ErrorHandler {
           if (result && result._body) {
             const parsedResult = JSON.parse(result._body);
             const data = parsedResult || {};
-            if (data) {
+            if (!data.message) {
               return Observable.of(data);
             } else {
-              const error = parsedResult.error || parsedResult.errors ? parsedResult.message : parsedResult.errors;
+              const error = data.message;
+              if (error === "Incorrect token") {
+                this.dispatcher.broadcast('logout');
+              }
               const message = {
                 title: error,
                 type: 'danger',
