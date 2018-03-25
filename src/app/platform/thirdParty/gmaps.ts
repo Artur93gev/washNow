@@ -8,6 +8,7 @@ export class GMaps {
   private geoCoder: any;
 
   private types = ['roadmap', 'satellite', 'hybrid', 'terrain'];
+  private markers = [];
 
   constructor() {
     this.initGeocoder();
@@ -22,11 +23,7 @@ export class GMaps {
             showOnTheMap: (map: any, setMark: boolean = false) => {
               map.setCenter(results[0].geometry.location);
               if (setMark) {
-                var marker = new google.maps.Marker({
-                   map,
-                   position: results[0].geometry.location,
-               });
-                this.logger('log', `marker has been set for ${results[0].formatted_address}`);
+                this.setMarker(map, results[0].geometry.location, results[0].formatted_address);
               }
             }
           }
@@ -37,6 +34,43 @@ export class GMaps {
       });
     });
     return promise;
+  }
+
+  public setMarker(map: any, location: any, address): void {
+    this.markers.push(
+      new google.maps.Marker({
+        map,
+        position: location,
+      })
+    );
+    this.logger('log', `marker has been set for ${address}`);
+  }
+
+  public getAddressByCoordinates(location: string): any {
+    let promise = new Promise((resolve, reject) => {
+      this.geoCoder.geocode({ location, }, (results: any, status: any): void => {
+        if (status === google.maps.GeocoderStatus.OK) {
+          const resolvationObject = {
+            results,
+            showOnTheMap: (map: any, setMark: boolean = false) => {
+              map.setCenter(results[0].geometry.location);
+              if (setMark) {
+                this.setMarker(map, results[0].geometry.location, results[0].formatted_address);
+              }
+            }
+          }
+          resolve(resolvationObject);
+         } else {
+           reject(results);
+         }
+      });
+    });
+    return promise;
+  }
+
+  public removeMarkers(): void {
+    this.markers.forEach(marker => marker.setMap(null));
+    this.logger('info', 'All markers have been remvoed');
   }
 
   private initGeocoder(): void {

@@ -115,7 +115,18 @@ export class CarWashDetailes implements OnInit, OnDestroy {
   }
 
   public gmapsClick(event: any): void {
-    console.log(event);
+    this.gMaps.getAddressByCoordinates(event.latLng)
+      .then(({ results, showOnTheMap }) => {
+        this.gMaps.removeMarkers();
+        const location = results[0].formatted_address.split(',');
+        const address = this.formGroup.get('address');
+        address.get('city').patchValue(location[1]);
+        address.get('street').patchValue(location[0]);
+        const coordinates = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
+        this.formGroup.get('location').get('coordinates').patchValue(coordinates);
+
+        showOnTheMap(this.maps, true);
+      });
   }
 
   public getMapObject(map: any): void {
@@ -126,10 +137,11 @@ export class CarWashDetailes implements OnInit, OnDestroy {
     event && event.stopPropagation();
     const address = this.formGroup.get('address').get('city').value + this.formGroup.get('address').get('street').value;
     this.gMaps.getCoordinatesByAddress(address)
-      .then((res) => {
-        const coordinates = [res.results[0].geometry.location.lat(), res.results[0].geometry.location.lng()];
+      .then(({ results, showOnTheMap }) => {
+        this.gMaps.removeMarkers();
+        const coordinates = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
         this.formGroup.get('location').get('coordinates').patchValue(coordinates);
-        res.showOnTheMap(this.maps, true);
+        showOnTheMap(this.maps, true);
       });
   }
 
