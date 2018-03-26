@@ -45,6 +45,11 @@ export class AppComponent {
       .subscribe(_ => {
         this.settings.token = null;
         this.settings.user = null;
+
+        // hiding right wiseboard component
+        
+        this.visible = false;
+        
         this.router.navigate(['login']);
       });
   }

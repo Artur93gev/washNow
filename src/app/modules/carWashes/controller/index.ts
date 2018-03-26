@@ -35,8 +35,13 @@ export class CarWashes implements OnDestroy {
     this.channels.push(
       this.activatedRoute.data.subscribe((res: any) => {
         if (res.data && res.data.length) {
-          this.carWashes = res.data[0].value;
-          this.managers = res.data[1].value;
+          // needs to be refactored after backend changes
+          // Now the carWashes is not an authorized call from backend
+          // throught this the `Resolver` is not guarding the route
+          if (res.data[0] && res.data[1]) {
+            this.carWashes = res.data[0].value;
+            this.managers = res.data[1].value;
+          }
         }
       })
     );

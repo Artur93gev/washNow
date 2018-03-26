@@ -26,5 +26,13 @@
       </span>
       <mat-icon *ngIf="settings.tab === item.url" class="margin-left">forward</mat-icon>
     </mat-toolbar-row>
+    <button
+      class="log-out-button"
+      mat-raised-button
+      color="accent"
+      (click)="logOut($event)"
+    >
+      Log out
+    </button>
   </mat-toolbar>
 </div>

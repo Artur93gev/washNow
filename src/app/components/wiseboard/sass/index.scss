@@ -16,7 +16,15 @@
 }
 
 .wash-now-logo {
+  
   width: calc(100% - 80px);
   height: 100px;
   padding: 0 40px;
+}
+
+.log-out-button {
+
+  position: absolute;
+  bottom: 20px;
+  left: 75px;
 }

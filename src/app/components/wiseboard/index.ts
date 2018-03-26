@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Settings } from '@platform/services';
+import { Settings, Dispatcher } from '@platform/services';
 
 import { menuItems, tab } from '@platform/constants';
 
@@ -17,6 +17,7 @@ export class Wiseboard {
 
   constructor(
     public settings: Settings,
+    private dispatcher: Dispatcher,
     private router: Router,
   ) {
     this.selectTab(this.settings.tab);
@@ -26,5 +27,10 @@ export class Wiseboard {
     event && event.stopPropagation();
     this.settings.tab = url;
     this.router.navigate([this.settings.tab]);
+  }
+
+  public logOut(event: Event): void {
+    // missing implenetation in backend
+    this.dispatcher.broadcast('logout');
   }
 }

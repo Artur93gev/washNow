@@ -163,6 +163,16 @@ export class CarWashDetailes implements OnInit, OnDestroy {
     });
   }
 
+
+  public getOwnLocation(event?: Event): void {
+    event && event.stopPropagation();
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition((result: any): void => {
+        console.log(result);
+      },(err) => console.log(err));
+    }
+  }
+
   ngOnDestroy() {
     unsubscriber(this.channels);
   }
