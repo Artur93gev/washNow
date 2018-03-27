@@ -115,18 +115,7 @@ export class CarWashDetailes implements OnInit, OnDestroy {
   }
 
   public gmapsClick(event: any): void {
-    this.gMaps.getAddressByCoordinates(event.latLng)
-      .then(({ results, showOnTheMap }) => {
-        this.gMaps.removeMarkers();
-        const location = results[0].formatted_address.split(',');
-        const address = this.formGroup.get('address');
-        address.get('city').patchValue(location[1]);
-        address.get('street').patchValue(location[0]);
-        const coordinates = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
-        this.formGroup.get('location').get('coordinates').patchValue(coordinates);
-
-        showOnTheMap(this.maps, true);
-      });
+    this.handleMarkingByLocation(event.latLng);
   }
 
   public getMapObject(map: any): void {
@@ -167,10 +156,32 @@ export class CarWashDetailes implements OnInit, OnDestroy {
   public getOwnLocation(event?: Event): void {
     event && event.stopPropagation();
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition((result: any): void => {
-        console.log(result);
-      },(err) => console.log(err));
+      navigator.geolocation.getCurrentPosition(
+        (result: any): void => {
+          const coordinates = {
+            lat: result.coords.latitude,
+            lng: result.coords.longitude,
+          }
+          this.handleMarkingByLocation(coordinates);
+        },
+        console.log,
+      );
     }
+  }
+
+  private handleMarkingByLocation(coordinates: any): void {
+    this.gMaps.getAddressByCoordinates(coordinates)
+      .then(({ results, showOnTheMap }) => {
+        this.gMaps.removeMarkers();
+        const location = results[0].formatted_address.split(',');
+        const address = this.formGroup.get('address');
+        address.get('city').patchValue(location[1]);
+        address.get('street').patchValue(location[0]);
+        const coordinates = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
+        this.formGroup.get('location').get('coordinates').patchValue(coordinates);
+
+        showOnTheMap(this.maps, true);
+      });
   }
 
   ngOnDestroy() {
